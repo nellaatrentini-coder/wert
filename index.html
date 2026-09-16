@@ -1,0 +1,2060 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Beautiful Story ♥</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            color: #624d4d;
+
+            overflow-x: hidden;
+
+            font-family: 'Montserrat', sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(244, 195, 215, 0.45),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 90% 25%,
+                    rgba(248, 218, 220, 0.50),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 15% 80%,
+                    rgba(239, 207, 215, 0.40),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #fff4f1 0%,
+                    #fdf0f1 45%,
+                    #fff7f3 100%
+                );
+        }
+
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Cormorant Garamond', serif;
+
+            font-weight: 500;
+        }
+
+
+        p {
+            font-weight: 300;
+        }
+
+
+
+        /* =========================
+           BACKGROUND MUSIC BUTTON
+        ========================= */
+
+        #musicButton {
+
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            width: 52px;
+            height: 52px;
+
+            border: 1px solid rgba(255,255,255,0.8);
+
+            border-radius: 50%;
+
+            background: rgba(111, 65, 72, 0.88);
+
+            color: white;
+
+            font-size: 21px;
+
+            cursor: pointer;
+
+            z-index: 99999;
+
+            backdrop-filter: blur(8px);
+
+            box-shadow:
+                0 8px 25px rgba(80, 40, 45, 0.25);
+
+            transition: all 0.3s ease;
+        }
+
+
+        #musicButton:hover {
+
+            transform: scale(1.08);
+
+        }
+
+
+        #musicButton.playing {
+
+            animation:
+                musicPulse 1.8s infinite ease-in-out;
+
+        }
+
+
+        @keyframes musicPulse {
+
+            0%,
+            100% {
+
+                box-shadow:
+                    0 8px 25px rgba(80, 40, 45, 0.25);
+
+            }
+
+            50% {
+
+                box-shadow:
+                    0 8px 35px rgba(170, 95, 110, 0.55);
+
+            }
+
+        }
+
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+
+            min-height: 100vh;
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            background:
+
+                linear-gradient(
+                    rgba(75, 35, 42, 0.40),
+                    rgba(75, 35, 42, 0.45)
+                ),
+
+                url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=2000&q=85");
+
+            background-size: cover;
+
+            background-position: center;
+
+            color: white;
+        }
+
+
+        .hero-content {
+
+            max-width: 850px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .hero-small {
+
+            font-size: 12px;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 25px;
+        }
+
+
+        .hero h1 {
+
+            font-size: clamp(55px, 9vw, 110px);
+
+            line-height: 0.95;
+
+            margin-bottom: 30px;
+        }
+
+
+        .hero h1 span {
+
+            color: #ffdce4;
+        }
+
+
+        .hero-quote {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: 25px;
+
+            line-height: 1.5;
+
+            max-width: 700px;
+
+            margin: auto;
+
+            font-style: italic;
+        }
+
+
+        .hero-description {
+
+            margin-top: 25px;
+
+            font-size: 14px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .scroll-btn {
+
+            display: inline-block;
+
+            margin-top: 45px;
+
+            padding: 14px 30px;
+
+            border: 1px solid rgba(255,255,255,0.7);
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            transition: 0.4s ease;
+        }
+
+
+        .scroll-btn:hover {
+
+            background: white;
+
+            color: #7b4e55;
+        }
+
+
+
+        /* =========================
+           FLOATING HEARTS
+        ========================= */
+
+        .heart {
+
+            position: absolute;
+
+            color: rgba(255,255,255,0.55);
+
+            font-size: 18px;
+
+            animation:
+                floatHeart 7s infinite ease-in-out;
+        }
+
+
+        .heart:nth-child(1) {
+
+            left: 10%;
+            top: 20%;
+        }
+
+
+        .heart:nth-child(2) {
+
+            left: 80%;
+            top: 25%;
+
+            animation-delay: 2s;
+        }
+
+
+        .heart:nth-child(3) {
+
+            left: 20%;
+            bottom: 20%;
+
+            animation-delay: 4s;
+        }
+
+
+        .heart:nth-child(4) {
+
+            right: 15%;
+            bottom: 18%;
+
+            animation-delay: 1s;
+        }
+
+
+        @keyframes floatHeart {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+                opacity: 0.4;
+            }
+
+
+            50% {
+
+                transform:
+                    translateY(-25px)
+                    rotate(10deg);
+
+                opacity: 0.9;
+            }
+
+        }
+
+
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
+        section {
+
+            padding: 110px 8%;
+        }
+
+
+        .eyebrow {
+
+            color: #ad7575;
+
+            font-size: 12px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 22px;
+        }
+
+
+        .section-title {
+
+            color: #6e4148;
+
+            font-size:
+                clamp(42px, 5vw, 72px);
+
+            line-height: 1.05;
+
+            margin-bottom: 30px;
+        }
+
+
+        .section-text {
+
+            color: #806b6b;
+
+            font-size: 15px;
+
+            line-height: 2;
+
+            margin-bottom: 20px;
+
+            font-weight: 300;
+        }
+
+
+        .highlight {
+
+            color: #9c6262;
+
+            font-family:
+                'Cormorant Garamond', serif;
+
+            font-size: 27px;
+
+            line-height: 1.4;
+
+            margin: 28px 0;
+        }
+
+
+
+        /* =========================
+           SPLIT LAYOUT
+        ========================= */
+
+        .split {
+
+            display: flex !important;
+
+            flex-direction: row !important;
+
+            flex-wrap: nowrap !important;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+
+        .split-content,
+        .split-image {
+
+            width: 50% !important;
+
+            flex: 0 0 50% !important;
+        }
+
+
+
+        /* =========================
+           CHAPTER ONE
+        ========================= */
+
+        .chapter-one {
+
+            background:
+
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(246, 207, 217, 0.45),
+                    transparent 35%
+                );
+        }
+
+
+        .chapter-image {
+
+            width: 100%;
+
+            min-height: 600px;
+
+            object-fit: cover;
+
+            object-position: center;
+
+            display: block;
+
+            border-radius:
+                180px 180px 0 0;
+
+            border:
+                12px solid #f8e6e5;
+
+            box-shadow:
+                0 25px 60px
+                rgba(128, 76, 84, 0.16);
+        }
+
+
+
+        /* =========================
+           OUR JOURNEY
+        ========================= */
+
+        .journey {
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.35),
+                    rgba(246,218,220,0.45)
+                );
+        }
+
+
+        .journey-image {
+
+            width: 100%;
+
+            height: 600px;
+
+            object-fit: cover;
+
+            object-position: center;
+
+            display: block;
+
+            border-radius:
+                0 180px 0 180px;
+
+            border:
+                12px solid #f8dede;
+
+            box-shadow:
+                0 25px 60px
+                rgba(128, 76, 84, 0.16);
+        }
+
+
+        .timeline {
+
+            margin-top: 35px;
+        }
+
+
+        .timeline-item {
+
+            position: relative;
+
+            padding-left: 28px;
+
+            margin-bottom: 30px;
+
+            border-left:
+                1px solid #d7a8ae;
+        }
+
+
+        .timeline-item::before {
+
+            content: "♥";
+
+            position: absolute;
+
+            left: -9px;
+
+            top: -3px;
+
+            font-size: 13px;
+
+            color: #b97982;
+
+            background: #fdf1f1;
+        }
+
+
+        .timeline-title {
+
+            color: #70454c;
+
+            font-family:
+                'Cormorant Garamond', serif;
+
+            font-size: 27px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .timeline-text {
+
+            color: #806b6b;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+
+        /* =========================
+           OUR MEMORIES
+        ========================= */
+
+        .memories {
+
+            text-align: center;
+        }
+
+
+        .memories-intro {
+
+            max-width: 700px;
+
+            margin:
+                0 auto 55px;
+
+            color: #806b6b;
+
+            font-size: 15px;
+
+            line-height: 2;
+        }
+
+
+        .memory-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 30px;
+        }
+
+
+        .memory-card {
+
+            overflow: hidden;
+
+            height: 420px;
+
+            border-radius:
+                130px 130px 0 0;
+
+            border:
+                10px solid #f8e4e4;
+
+            box-shadow:
+                0 20px 45px
+                rgba(128, 76, 84, 0.12);
+        }
+
+
+        .memory-card img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform 0.7s ease;
+        }
+
+
+        .memory-card:hover img {
+
+            transform: scale(1.05);
+        }
+
+
+
+        /* =========================
+           DIGITAL LETTER
+        ========================= */
+
+        .love-letter {
+
+            text-align: center;
+
+            background:
+
+                radial-gradient(
+                    circle at center,
+                    rgba(246, 211, 218, 0.60),
+                    transparent 65%
+                );
+        }
+
+
+        .letter {
+
+            max-width: 800px;
+
+            margin: auto;
+        }
+
+
+        .letter p {
+
+            color: #806b6b;
+
+            font-size: 16px;
+
+            line-height: 2.1;
+
+            margin-bottom: 22px;
+        }
+
+
+        .letter .highlight {
+
+            font-size: 38px;
+
+            font-weight: 500;
+
+            color: #8e555f;
+
+            margin: 35px 0;
+        }
+
+
+        .signature {
+
+            margin-top: 40px;
+
+            color: #925d65;
+
+            font-family:
+                'Cormorant Garamond', serif;
+
+            font-size: 30px;
+
+            font-style: italic;
+        }
+
+
+
+        /* =========================
+           QUOTE SECTION
+        ========================= */
+
+        .quote-section {
+
+            min-height: 70vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+
+                linear-gradient(
+                    rgba(76, 42, 48, 0.45),
+                    rgba(76, 42, 48, 0.55)
+                ),
+
+                url("https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=2000&q=85");
+
+            background-size: cover;
+
+            background-position: center;
+
+            color: white;
+        }
+
+
+        .quote-content {
+
+            max-width: 850px;
+        }
+
+
+        .quote-content h2 {
+
+            font-size:
+                clamp(45px, 6vw, 80px);
+
+            line-height: 1.1;
+        }
+
+
+        .quote-content p {
+
+            margin-top: 25px;
+
+            font-family:
+                'Cormorant Garamond', serif;
+
+            font-size: 30px;
+        }
+
+
+
+        /* =========================
+           FROM PARK TALKS TO LONG RIDES
+        ========================= */
+
+        .describe {
+
+            background:
+
+                radial-gradient(
+                    circle at 20% 30%,
+                    rgba(246, 205, 214, 0.50),
+                    transparent 35%
+                );
+        }
+
+
+        .describe-image {
+
+            width: 50% !important;
+
+            flex: 0 0 50% !important;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+
+        .describe-frame {
+
+            width: 100%;
+
+            max-width: 560px;
+
+            padding: 12px;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #f7d8dc,
+                    #f4e1d9
+                );
+
+            border-radius:
+                180px 0 180px 0;
+
+            box-shadow:
+                0 25px 60px
+                rgba(128, 76, 84, 0.16);
+        }
+
+
+        .describe-frame img {
+
+            width: 100%;
+
+            height: auto;
+
+            display: block;
+
+            object-fit: contain;
+
+            object-position: center;
+
+            border-radius:
+                165px 0 165px 0;
+        }
+
+
+        .describe-title {
+
+            margin-bottom: 35px;
+        }
+
+
+
+        /* =========================
+           OUR FUTURE
+        ========================= */
+
+        .future {
+
+            text-align: center;
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(247, 212, 220, 0.55),
+                    transparent 55%
+                );
+        }
+
+
+        .future-content {
+
+            max-width: 800px;
+
+            margin: auto;
+        }
+
+
+        .future-content p {
+
+            color: #806b6b;
+
+            font-size: 16px;
+
+            line-height: 2;
+
+            margin-bottom: 25px;
+        }
+
+
+
+        /* =========================
+           FINAL SECTION
+        ========================= */
+
+        .final-section {
+
+            min-height: 90vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+
+                linear-gradient(
+                    rgba(75, 35, 42, 0.42),
+                    rgba(75, 35, 42, 0.55)
+                ),
+
+                url("https://images.unsplash.com/photo-1518621012424-9f7d7f2a7f4b?auto=format&fit=crop&w=2000&q=85");
+
+            background-size: cover;
+
+            background-position: center;
+
+            color: white;
+        }
+
+
+        .final-content {
+
+            max-width: 900px;
+        }
+
+
+        .final-content h2 {
+
+            font-size:
+                clamp(50px, 7vw, 95px);
+
+            line-height: 1;
+
+            margin-bottom: 30px;
+        }
+
+
+        .final-content p {
+
+            font-family:
+                'Cormorant Garamond', serif;
+
+            font-size: 30px;
+
+            line-height: 1.5;
+        }
+
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            padding: 45px 20px;
+
+            text-align: center;
+
+            background: #f5dddd;
+
+            color: #8c5b63;
+        }
+
+
+        footer h3 {
+
+            font-size: 30px;
+
+            margin-bottom: 8px;
+        }
+
+
+        footer p {
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+        }
+
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media screen and (max-width: 750px) {
+
+
+            section {
+
+                padding: 80px 7%;
+            }
+
+
+            .hero {
+
+                min-height: 100vh;
+
+                padding: 50px 20px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 58px;
+            }
+
+
+            .hero-quote {
+
+                font-size: 21px;
+            }
+
+
+            .split {
+
+                flex-direction: column !important;
+
+                gap: 45px;
+            }
+
+
+            .split-content,
+            .split-image {
+
+                width: 100% !important;
+
+                flex: 0 0 100% !important;
+            }
+
+
+            .chapter-image {
+
+                min-height: 450px;
+
+                border-radius:
+                    120px 120px 0 0;
+            }
+
+
+            .journey-image {
+
+                height: 450px;
+
+                border-radius:
+                    0 120px 0 120px;
+            }
+
+
+            .memory-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .memory-card {
+
+                height: 450px;
+            }
+
+
+            .letter p {
+
+                font-size: 15px;
+
+                line-height: 2;
+            }
+
+
+            .letter .highlight {
+
+                font-size: 34px;
+            }
+
+
+            .describe-image {
+
+                width: 100% !important;
+
+                flex: 0 0 100% !important;
+
+                display: flex;
+
+                justify-content: center;
+
+                align-items: center;
+            }
+
+
+            .describe-frame {
+
+                width: 100%;
+
+                max-width: 520px;
+
+                padding: 9px;
+
+                border-radius:
+                    120px 0 120px 0;
+            }
+
+
+            .describe-frame img {
+
+                width: 100%;
+
+                height: auto;
+
+                max-height: none;
+
+                object-fit: contain;
+
+                border-radius:
+                    108px 0 108px 0;
+            }
+
+
+            .quote-section {
+
+                min-height: 65vh;
+            }
+
+
+            .quote-content p {
+
+                font-size: 25px;
+            }
+
+
+            .final-content p {
+
+                font-size: 25px;
+            }
+
+
+            #musicButton {
+
+                width: 46px;
+
+                height: 46px;
+
+                right: 18px;
+
+                bottom: 18px;
+
+                font-size: 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BACKGROUND MUSIC
+    ========================= -->
+
+    <audio id="bgMusic" loop preload="auto">
+
+        <source src="./music.mp3" type="audio/mpeg">
+
+        Your browser does not support audio.
+
+    </audio>
+
+
+    <button
+        id="musicButton"
+        onclick="toggleMusic()"
+        aria-label="Play or pause music"
+    >
+        ♫
+    </button>
+
+
+    <script>
+
+        const music =
+            document.getElementById("bgMusic");
+
+        const musicButton =
+            document.getElementById("musicButton");
+
+
+        music.volume = 0.35;
+
+
+        let musicStarted = false;
+
+
+        function startMusic() {
+
+            if (!musicStarted) {
+
+                music.play()
+                    .then(() => {
+
+                        musicStarted = true;
+
+                        musicButton.innerHTML = "♫";
+
+                        musicButton.classList.add("playing");
+
+                    })
+                    .catch(() => {});
+
+            }
+
+        }
+
+
+        function toggleMusic() {
+
+            if (music.paused) {
+
+                music.play()
+                    .then(() => {
+
+                        musicStarted = true;
+
+                        musicButton.innerHTML = "♫";
+
+                        musicButton.classList.add("playing");
+
+                    })
+                    .catch(() => {});
+
+            }
+
+            else {
+
+                music.pause();
+
+                musicButton.innerHTML = "🔇";
+
+                musicButton.classList.remove("playing");
+
+            }
+
+        }
+
+
+        /*
+         * Music starts when the visitor
+         * begins scrolling.
+         */
+
+        document.addEventListener(
+            "scroll",
+            startMusic,
+            {
+                once: true,
+                passive: true
+            }
+        );
+
+
+        /*
+         * Also allow the music to start
+         * when the visitor clicks or touches.
+         */
+
+        document.addEventListener(
+            "click",
+            startMusic,
+            {
+                once: true
+            }
+        );
+
+
+        document.addEventListener(
+            "touchstart",
+            startMusic,
+            {
+                once: true,
+                passive: true
+            }
+        );
+
+    </script>
+
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+
+        <div class="heart">♥</div>
+
+        <div class="heart">♥</div>
+
+        <div class="heart">♥</div>
+
+        <div class="heart">♥</div>
+
+
+        <div class="hero-content">
+
+
+            <div class="hero-small">
+                My Favourite Place In This World
+            </div>
+
+
+            <h1>
+
+                You Are <span>♥</span><br>
+
+                My Comfort Zone
+
+            </h1>
+
+
+            <p class="hero-quote">
+
+                “In a world that can feel overwhelming,
+                somehow, you became the place where my heart feels at home.”
+
+            </p>
+
+
+            <p class="hero-description">
+
+                This is our story, written in little moments and endless love.
+
+            </p>
+
+
+            <a href="#story" class="scroll-btn">
+
+                SCROLL TO OUR STORY ↓
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CHAPTER ONE
+    ========================= -->
+
+    <section
+        class="chapter-one"
+        id="story"
+    >
+
+        <div class="split">
+
+
+            <div class="split-content">
+
+
+                <div class="eyebrow">
+                    CHAPTER ONE
+                </div>
+
+
+                <h2 class="section-title">
+                    Where It All Began
+                </h2>
+
+
+                <p class="section-text">
+
+                    Sometimes the most beautiful stories
+                    begin in the simplest places.
+
+                </p>
+
+
+                <p class="section-text">
+
+                    For us, it all started in a park.
+
+                </p>
+
+
+                <p class="section-text">
+
+                    At first, it was just a place where we spent
+                    some time. Then slowly, we started talking
+                    more and more.
+
+                </p>
+
+
+                <p class="section-text">
+
+                    Every day after work, spending time with you
+                    in the park became something I looked forward to.
+
+                </p>
+
+
+                <p class="highlight">
+
+                    And somewhere between all those conversations
+                    and little moments, you became my favourite
+                    part of every day.
+
+                </p>
+
+
+                <p class="section-text">
+
+                    I never planned for this.
+                    It just happened.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="split-image">
+
+
+                <img
+                    class="chapter-image"
+                    src="./park.png?v=1"
+                    alt="A beautiful memory together in the park"
+                >
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         OUR JOURNEY
+    ========================= -->
+
+    <section class="journey">
+
+
+        <div class="split">
+
+
+            <div class="split-image">
+
+
+                <img
+                    class="journey-image"
+                    src="./theater.png?v=1"
+                    alt="Our beautiful journey together"
+                >
+
+
+            </div>
+
+
+            <div class="split-content">
+
+
+                <div class="eyebrow">
+                    OUR JOURNEY
+                </div>
+
+
+                <h2 class="section-title">
+
+                    Little Moments,<br>
+                    Big Feelings
+
+                </h2>
+
+
+                <div class="timeline">
+
+
+                    <div class="timeline-item">
+
+                        <h3 class="timeline-title">
+                            The Day We Met
+                        </h3>
+
+                        <p class="timeline-text">
+
+                            One ordinary day that quietly became
+                            the beginning of something extraordinary.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="timeline-item">
+
+                        <h3 class="timeline-title">
+                            We Started Talking
+                        </h3>
+
+                        <p class="timeline-text">
+
+                            Conversations became longer,
+                            smiles became more frequent,
+                            and somehow I started waiting
+                            for your messages.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="timeline-item">
+
+                        <h3 class="timeline-title">
+                            I Fell For You
+                        </h3>
+
+                        <p class="timeline-text">
+
+                            Somewhere between the laughs,
+                            conversations and little moments,
+                            my heart chose you.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="timeline-item">
+
+                        <h3 class="timeline-title">
+                            Feeling At Home
+                        </h3>
+
+                        <p class="timeline-text">
+
+                            With you, I discovered a feeling
+                            I didn't know I was looking for:
+                            peace.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="timeline-item">
+
+                        <h3 class="timeline-title">
+                            Still Choosing You
+                        </h3>
+
+                        <p class="timeline-text">
+
+                            And today, after every moment,
+                            I would still choose you.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         OUR MEMORIES
+    ========================= -->
+
+    <section class="memories">
+
+
+        <div class="eyebrow">
+            OUR MEMORIES
+        </div>
+
+
+        <h2 class="section-title">
+
+            Moments I Want To Keep Forever
+
+        </h2>
+
+
+        <p class="memories-intro">
+
+            Every picture holds a feeling,
+            every memory carries a smile,
+            and every moment with you is something
+            I want to keep forever.
+
+        </p>
+
+
+        <div class="memory-grid">
+
+
+            <div class="memory-card">
+
+                <img
+                    src="./game.png?v=1"
+                    alt="Our gaming memory"
+                >
+
+            </div>
+
+
+            <div class="memory-card">
+
+                <img
+                    src="./momos.png?v=1"
+                    alt="Our food memory"
+                >
+
+            </div>
+
+
+            <div class="memory-card">
+
+                <img
+                    src="./hotel.png?v=1"
+                    alt="Our special memory"
+                >
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         DIGITAL LETTER
+    ========================= -->
+
+    <section class="love-letter">
+
+
+        <div class="letter">
+
+
+            <div class="eyebrow">
+                DIGITAL LETTER FOR MY TECH BOY
+            </div>
+
+
+            <h2 class="section-title">
+
+                To My Favourite Person,
+
+            </h2>
+
+
+            <p>
+
+                You became my comfort zone without even trying.
+
+            </p>
+
+
+            <p>
+
+                You are not just my lover;
+                you are my best friend, my safe place,
+                my comfort, and somehow,
+                my everything in one person.
+
+            </p>
+
+
+            <p>
+
+                With you, I never feel like I have to pretend
+                to be someone I'm not. I can be messy, quiet,
+                loud, emotional, silly, or simply myself—
+                and you still make me feel loved.
+
+            </p>
+
+
+            <p>
+
+                You are the person I want to talk to after
+                a long day, the person I want beside me when
+                something wonderful happens, and the person
+                I look for when life feels a little too much.
+
+            </p>
+
+
+            <p>
+
+                With you, I don't have to explain everything.
+                Sometimes, you understand me without me saying
+                a word.
+
+            </p>
+
+
+            <p>
+
+                You make hard days feel lighter,
+                silence feel peaceful,
+                and laughter feel completely natural.
+
+            </p>
+
+
+            <p>
+
+                I don't know what the future will look like,
+                but I know I want you somewhere in it.
+
+            </p>
+
+
+            <p>
+
+                Because you are not just a chapter in my life.
+
+            </p>
+
+
+            <p class="highlight">
+
+                You are the whole story.
+
+            </p>
+
+
+            <p>
+
+                And somehow, life feels a little more beautiful
+                when I get to experience it with you.
+
+            </p>
+
+
+            <div class="signature">
+
+                With all my heart,<br>
+                Always yours ♥
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         QUOTE
+    ========================= -->
+
+    <section class="quote-section">
+
+
+        <div class="quote-content">
+
+
+            <h2>
+
+                Home isn't always a place.
+                Sometimes, it's a person.
+
+            </h2>
+
+
+            <p>
+
+                And for me, it's you.
+
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FROM PARK TALKS TO LONG RIDES
+    ========================= -->
+
+    <section class="describe">
+
+
+        <div class="split">
+
+
+            <div class="split-content">
+
+
+                <div class="eyebrow">
+
+                    FROM PARK TALKS TO LONG RIDES
+
+                </div>
+
+
+                <h2 class="section-title describe-title">
+
+                    You Are My Crazy Bike Boy.
+
+                </h2>
+
+
+                <p class="section-text">
+
+                    You are the crazy bike boy who somehow
+                    changed me too.
+
+                </p>
+
+
+                <p class="section-text">
+
+                    I never thought I would start dreaming
+                    about long rides, but now all I want
+                    is to go on a long drive with you.
+
+                </p>
+
+
+                <p class="section-text">
+
+                    Taking your dream bike, going somewhere far away,
+                    with you beside me and my dream ride waiting for us.
+
+                </p>
+
+
+                <p class="section-text">
+
+                    Maybe I don't need a perfect destination.
+                    I just want the road, your bike,
+                    my favourite person, and endless time with you.
+
+                </p>
+
+
+                <p class="highlight">
+
+                    Because somehow, you made me fall in love
+                    with the idea of riding away with you.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="describe-image">
+
+
+                <div class="describe-frame">
+
+
+                    <img
+                        src="./travel.png?v=3"
+                        alt="A beautiful bike and travel memory together"
+                    >
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         OUR FUTURE
+    ========================= -->
+
+    <section class="future">
+
+
+        <div class="future-content">
+
+
+            <div class="eyebrow">
+                OUR FUTURE
+            </div>
+
+
+            <h2 class="section-title">
+
+                This Isn't The End
+
+            </h2>
+
+
+            <p>
+
+                There are still so many places we haven't visited,
+                memories we haven't made, sunsets we haven't watched,
+                and silly moments we haven't laughed about yet.
+
+            </p>
+
+
+            <p>
+
+                I want the adventures,
+                the quiet evenings,
+                the unexpected plans,
+                and even the ordinary days.
+
+            </p>
+
+
+            <p>
+
+                Because with you,
+                even an ordinary day can become something special.
+
+            </p>
+
+
+            <p>
+
+                This is only one chapter of our story.
+                I can't wait to see what the next ones look like.
+
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FINAL
+    ========================= -->
+
+    <section class="final-section">
+
+
+        <div class="final-content">
+
+
+            <h2>
+
+                If I Had To Choose Again...
+
+            </h2>
+
+
+            <p>
+
+                I would find you.
+                I would choose you.
+                I would love you.
+                All over again.
+
+            </p>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+
+        <h3>
+
+            Forever & Always ♥
+
+        </h3>
+
+
+        <p>
+
+            ONE STORY · TWO HEARTS · ONE BEAUTIFUL JOURNEY
+
+        </p>
+
+
+    </footer>
+
+
+</body>
+
+</html>
+```
